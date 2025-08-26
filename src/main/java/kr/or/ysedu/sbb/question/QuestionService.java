@@ -17,7 +17,7 @@ public class QuestionService {
   private final QuestionRepository questionRepository;
 
   public Page<Question> getList(int page) {
-    Pageable pageable = PageRequest.of(page, 1);
+    Pageable pageable = PageRequest.of(page, 10);
     return this.questionRepository.findAll(pageable);
   }
 
