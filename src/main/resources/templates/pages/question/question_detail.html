@@ -1,2 +1,6 @@
 <h1 th:text="${question.subject}"></h1>
 <div th:text="${question.content}"></div>
+<form th:action="@{|/answer/create/${question.id}|}" method="post">
+    <textarea name="content" rows="4" cols="50"></textarea><br>
+    <button type="submit">답변 등록</button>
+</form>
