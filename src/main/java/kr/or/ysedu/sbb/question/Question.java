@@ -2,6 +2,7 @@ package kr.or.ysedu.sbb.question;
 
 import jakarta.persistence.*;
 import kr.or.ysedu.sbb.answer.Answer;
+import kr.or.ysedu.sbb.user.SiteUser;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,4 +37,7 @@ public class Question {
   //질문에서 답변을 참조하려면 question.getAnswerList()를 호출
   //@OneToMany 애너테이션에 사용된 mappedBy는 참조 엔티티의 속성명을 정의
   //즉, Answer 엔티티에서 Question 엔티티를 참조한 속성인 question을 mappedBy에 전달해야 한다.
+
+  @ManyToOne
+  private SiteUser author;
 }
